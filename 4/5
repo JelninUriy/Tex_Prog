@@ -1,0 +1,60 @@
+//Çàäà÷à: Çàïîëíèòü ìàññèâ ñëó÷àéíûìè ÷èñëàìè â äèàïàçîíå îò -1000 äî 1000
+//Ñäåëàòü òàê, ÷òîáû â ìàññèâå íå áûëî îäèíàêîâûõ ïî ìîäóëþ ÷èñåë, íàéòè íàèáîëüøåå ïî ìîäóëþ ÷èñëî
+using namespace std;
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+int main()
+{
+    setlocale(LC_ALL,"Russian");
+    int gor,a,b,s;
+   
+    int mas[120];
+    for(int i=0;i<120;i++)//çàïîëíåíèå ìàññèâà
+    {
+        gor=rand() % 1000;
+        int j =rand() % 10;
+        if(j<5)
+        {
+            mas[i]= gor*(-1);
+        }
+        else
+        {
+            mas[i]=gor;
+        }
+       // cout<<mas[i]<<endl;
+    }
+    for(int p;p<4;p++)//êîñòûëèçàòîð ðàöèîíàëüíî èçáàâëÿþùèé îò îäèíàêîâûõ ïî ìîäóëþ ÷èñåë
+	{
+    for(int i=0;i<120;i++)
+    {
+    	 for(int j=0;j<120;j++)
+         {
+    	    if(abs(mas[i])==abs(mas[j]))
+    	    {
+    	    	gor=rand() % 1000;
+                 int j =rand() % 10;
+                 if(j<5)
+                {
+                  mas[i]= gor*(-1);
+                }
+                else
+                {
+                  mas[i]=gor;
+                }
+			}
+	     }
+	}
+   }
+   //ïîèñê íàèáîëüøåãî ïî ìîäóëþ ÷èñëà
+   int f=0;
+   for(int i=0;i<120;i++)
+   {
+   	if(abs(mas[i])>abs(f))
+   	   {
+   		f=mas[i];
+	   }
+   }
+   cout<<f;
+    return 0;
+}
