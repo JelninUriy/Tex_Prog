@@ -1,0 +1,51 @@
+//4)Необходимо сжать массив удалив из него все эллементы величина которых находится в интервале между а и б(обнуляем,сдвигаем)
+using namespace std;
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+int main()
+{
+    setlocale(LC_ALL,"Russian");
+    int gor,a,b,s;
+    cout<<"Назовите левую границу "<<endl;
+    cin>>a;
+    cout<<"Назовите правую границу"<<endl;
+    cin>>b;
+
+    int mas[5];
+    for(int i=0;i<120;i++)//заполнение массива
+    {
+        gor=rand() % 1000;
+        int j =rand() % 10;
+        if(j<5)
+        {
+            mas[i]= gor*(-1);
+        }
+        else
+        {
+            mas[i]=gor;
+        }
+        cout<<mas[i]<<endl;
+    }
+    int sum=0;
+    for(int i=0;i<120;i++)//Обнулятор
+    {
+       if(mas[i]>a&&mas[i]<b)
+        {
+            mas[i]=0;
+        }
+    }
+        for(int i=0;i<120;i++)//Сжиматор
+    {
+       if( mas[i]==0)
+        {   s=mas[i+1];
+            mas[i+1]=mas[i];
+            mas[i]=s;
+        }
+    }
+ for(int i=0;i<120;i++)
+ {
+     cout<<mas[i]<<";";
+ }
+    return 0;
+}
