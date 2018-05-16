@@ -1,0 +1,32 @@
+//2)Вычислить сумму модулей эллементов массива расположеных сразу после первого отрицательного элемента массива.(задаем массив рандомно от минус 1000 до 1000)(размер не меньше 100)
+using namespace std;
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+int main()
+{
+    int gor;
+     setlocale(LC_ALL,"Russian");
+    int mas[120];
+    for(int i=0;i<120;i++)//заполнение массива
+    {
+        gor=rand() % 1000;
+        int j =rand() % 10;
+        if(j<5)
+        {
+            mas[i]= gor*(-1);
+        }
+        else
+        {
+            mas[i]=gor;
+        }
+    }
+    int sum=0;
+    for(int i=0;i<120;i++)//поиск суммы
+    {
+       sum+=abs(mas[i]);
+
+    }
+   cout<<sum;
+    return 0;
+}
