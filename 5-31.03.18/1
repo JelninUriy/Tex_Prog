@@ -1,0 +1,49 @@
+//3)Задача: Поменять местами два случайных столбца матрицы
+#include <iostream>
+#include <cstdlib>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{      int gor;
+     setlocale(LC_ALL,"Russian");
+     cout <<"Введите размерность матрицы (n x k)"<<endl;
+    int n,k;
+    cin >>n;
+    cin >>k;
+    int mas[n][k];
+    for(int i=0;i<n;i++)//заполнение массива
+    {  for(int j=0;j<k;j++)
+    {
+        gor=rand() % 1000;
+        int q =rand() % 10;
+        if(q<5)
+        {
+            mas[i][j]= gor*(-1);
+        }
+        else
+        {
+            mas[i][j]=gor;
+        }
+        cout<<mas[i][j]<<" ";
+    }cout<<endl;}
+        int s1 =rand() % k;
+    	int s2 =rand() % k;
+    for(int i=0;i<n;i++)
+    {
+    	int swap;
+    	swap =mas[i][s1];
+    	mas[i][s1]=mas[i][s2];
+    	mas[i][s2]=swap;
+	}
+	 for(int i=0;i<n;i++)//вывод конечного массива
+    {  for(int j=0;j<k;j++)
+    {
+        
+        cout<<mas[i][j]<<" ";
+    }
+	cout<<endl; }
+     return 0;
+}
