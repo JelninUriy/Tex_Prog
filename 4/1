@@ -1,0 +1,29 @@
+//1)В одномерном массиве(целых чисел) определить 2 наименьших элемента,они могут быть равны между собой,а могут отличаться
+using namespace std;
+#include <iostream>
+int main()
+{
+    int gor;
+     setlocale(LC_ALL,"Russian");
+    int mas[15];
+    for(int i=0;i<15;i++)
+    {
+        mas[i]=2+i;
+          cout<<mas[i]<<endl;
+    }
+for(int i=0;i<2;i++){
+for(int i=0;i<15;i++)
+    {
+       if(mas[i]<mas[i+1])
+       {
+           gor=mas[i];
+           mas[i]=mas[i+1];
+           mas[i+1]=gor;
+           cout<<mas[i]<<";";
+       }
+
+    }}
+     cout<<"Первый наименьший эллемент ="<<mas[14]<<endl;
+      cout<<"второй наименьший эллемент ="<<mas[13]<<endl;
+    return 0;
+}
