@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int* y[]={2, 3, 4};  											
+int* x[]={1};													
+int* z[]={5, 6, 7, 8, 9, 11, 12, 13, 14, 0};			 		
+
+int main(int argc, char** argv)
+{
+setlocale(LC_ALL,"rus");
+int n;
+cout << "введите год"<<endl;
+cin >> n;
+for (int k=0, k<9; k++)
+for (int i=0, i<3; i++)
+for (int j=0, j<1; j++)
+if ((n = x[j]) or (n%10 = x[j]))
+cout <<n<< "год";
+else 
+if((n = y[i]) or (n%10 = y[i]))
+cout <<n<< "года";
+else
+cout <<n<< "лет";
+ return 0;
+}
