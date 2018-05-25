@@ -1,0 +1,33 @@
+//Задача: Посчитать количество строк, слов и символов в каждой строке текстового файла.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL,"rus");
+    ifstream file("in.txt");
+    int words=1;
+    int sstring=1;
+    int symbol=0;
+
+    while (file)
+    {
+        symbol++;
+        char Raid;
+        file.get(Raid);
+       if (Raid==' ')
+        {
+            words++;
+        }
+        if (Raid == '\n')
+        {
+            cot++;
+            sstring++;
+            symbol--;
+        }
+    };
+    file.close();
+    cout <<"Количество символов: "<<symbol-1<<endl<<"Количество слов: "<<words<<endl<<"Количество строк: "<<sstring;
+    return 0;
+}
