@@ -23,7 +23,7 @@ int mas[k][k];
         }
 
 		
-		cout<<mas[i][j]<<" ";
+		//cout<<mas[i][j]<<" ";
 	}}
 for(int i=0;i<k;i++)
 	{  for(int j=0;j<k;j++){
