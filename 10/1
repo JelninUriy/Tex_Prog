@@ -6,7 +6,7 @@ using namespace std;
  
 int main()
 {
-    int dec, bin, mod, sum;
+    int dec, mod, sum;
     cout << "Enter decimal num\n";
     cin >> dec;
     
