@@ -1,0 +1,40 @@
+//Задача: Вводится строка, которая содержит буквы, цифры и иные символы, необходимо все числа поместить в отдельный массив целочисленных элементов.
+#include <iostream>
+#include <string>
+#include <vector>
+#include <iterator>
+
+using namespace std;
+
+void get_numbers(vector<int> & result, const string & s) {
+    bool found = false;
+    int number = 0;
+
+    for (string::size_type i = 0; i < s.length(); i++) {
+        const char ch = s[i];
+        if (ch >= '0' && ch <= '9') {
+            const int digit = ch - '0';
+            number = number*10 + digit;
+            found = true;
+        }
+        else {
+            if (found) {
+                result.push_back(number);
+                
+                number = 0;
+                found = false;
+            }
+        }
+    }
+
+    if (found) {
+        result.push_back(number);
+    }
+}
+
+int main() {
+    vector<int> numbers;
+    get_numbers(numbers, "54dgdf5 6hgf1 0hgjgh96 ryre57yt6t");
+
+    copy(numbers.begin(), numbers.end(), ostream_iterator<int>(cout, "\n"));
+}
