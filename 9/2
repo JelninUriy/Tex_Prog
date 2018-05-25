@@ -1,0 +1,25 @@
+//Задача: Необходимо создать текстовый файл и записать туда построчно то, что вводит пользователь.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"rus");
+    ofstream file("out.txt");
+
+    cout <<"Напишите что-нибудь: "<<endl;
+    cout <<"Если вы хотите закончить, напишите StopInput "<<endl;
+
+    while (true)
+    {
+        string qword;
+        cin >> qword;
+        if (qword=="StopInput") {break;};
+        file<<qword<<endl;
+    }
+    file.close();
+    return 0;
+}
