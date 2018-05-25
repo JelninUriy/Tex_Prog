@@ -1,1 +1,25 @@
 //Задача: Задана строка необходимо найти в ней указанную подстроку и, если она есть, заменить на новую, которую вводит пользователь.
+#include<iostream>
+#include<cstdlib>
+#include <cstring>
+using namespace std;
+ 
+int main()
+{
+    char str[]="aaa bbbb 111111 bbbb ccccc";//сама строка
+    char str1[]="bbbb",str2[]="ddddd",result[100];//обьявление искомой подстроки(str1),обьявление изменяемой подстроки (str2)
+    char *p,*pold=NULL;
+    p=str-1;
+    while( (p=strstr(p+1,str1))!=NULL)
+        pold=p;
+    if(pold!=NULL)
+    {
+        *pold=0; // конец строки, которая не меняется
+        strcpy(result,str); // скопировали этот кусок
+        strcat(result,str2); // добавили str2
+        strcat(result,pold+strlen(str1)); // добавили остаток
+    }
+    cout<<result;
+    system("pause");
+    return 0;
+}
