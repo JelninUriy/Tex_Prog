@@ -1,0 +1,47 @@
+//Задача: Сделать так, чтобы последние элементы смещаемого массива переносились в начало смещенного массива, то есть,
+//чтобы не происходила потеря элементов. Полученный после смещения массив выводится на каждой итерации.
+
+#include <iostream>
+
+using namespace std;
+
+int massiv[60],smeshenie[80];
+int k,f;
+
+int main()
+{
+    setlocale(LC_ALL,"rus");
+    for (int i = 0; i<60; i++)
+    {
+        f++;
+        massiv[i]=f;
+        smeshenie[i]=f;
+    };
+
+    cout << "Введите смещение (положительное число) "<<endl;
+    cin >> k;
+    for (int n = 0;n<k;n++)
+        {
+        for (int i = 0; i<60; i++)
+        {
+            if ((i+1)<60)
+            {
+                smeshenie[i+1]=massiv[i];
+            }
+            else
+            {
+                smeshenie[0] = massiv[59];
+            };
+        };
+        for (int j = 0; j<60; j++)
+        {
+                massiv[j]=smeshenie[j];
+        };
+        for (int j = 0; j<60; j++)
+        {
+            cout <<smeshenie[j];
+        };
+        cout <<endl;
+    };
+    return 0;
+}
