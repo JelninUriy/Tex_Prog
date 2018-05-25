@@ -1,0 +1,23 @@
+//Задача: Дан текст, определить процент заглавных и строчных букв в общем количестве символов без учета пробелов.
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+ 
+int main()
+{
+    char fraza[255]="";
+    cin>>fraza;
+    double a=0,b=0;
+    for (int i=0;i<255;i++)
+    {
+        if ((fraza[i]>='A')&&(fraza[i]<='Z'))a++;
+        if (fraza[i]>='a'&&fraza[i]<='z')b++;
+    }
+double g = (a/strlen(fraza))*100;
+double f= (b/strlen(fraza))*100;
+   cout <<"Процент строчных букв в тексте - "<<g<<endl;
+   cout <<"Процент заглавных букв в тексте - "<<f<<endl;
+    return 0;
+}
